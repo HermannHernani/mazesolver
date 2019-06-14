@@ -3,8 +3,8 @@ var Maze = function(doc, elemId) {
   this.width = this.canvas.width;
   this.height = this.canvas.height;
   this.ctx = this.canvas.getContext('2d');
-  this.horizCells = 30;
-  this.vertCells = 30;
+  this.horizCells = 10;
+  this.vertCells = 10;
   this.generator = new MazeGenerator(this.horizCells, this.vertCells);
   this.cellWidth = this.width / this.horizCells;
   this.cellHeight = this.height / this.vertCells;
@@ -12,7 +12,7 @@ var Maze = function(doc, elemId) {
   var self = this;
 
   self.ctx.strokeStyle = "rgb(0, 0, 0)";
-  self.ctx.fillStyle = "rgba(255, 0, 0, 0.1)";
+  self.ctx.fillStyle = "rgba(0, 0, 0, 0.5)";
 
   return {
     width: function() {
