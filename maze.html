@@ -46,13 +46,19 @@
 			<script src="src/mazeGenerator.js"></script>
 			<script src="src/graph.js"></script>
 			<script>
+				
+				var url_string = window.location.href; //window.location.href
+      
+      			var url = new URL(url_string);
+      			var nome = url.searchParams.get("nome");
+
 				var Maze = function(doc, elemId) {
 				this.canvas = doc.getElementById(elemId);
 				this.width = this.canvas.width;
 				this.height = this.canvas.height;
 				this.ctx = this.canvas.getContext('2d');
-				this.horizCells = 10;
-				this.vertCells = 10;
+				this.horizCells = nome;
+				this.vertCells = nome;
 				this.generator = new MazeGenerator(this.horizCells, this.vertCells);
 				this.cellWidth = this.width / this.horizCells;
 				this.cellHeight = this.height / this.vertCells;
