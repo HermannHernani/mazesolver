@@ -1,55 +1,53 @@
 <!DOCTYPE html>
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!-- Consider specifying the language of your content by adding the `lang` attribute to <html> -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
 <head>
-    <meta charset="utf-8">
-
-    <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-         More info: h5bp.com/i/378 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>Random maze generator/solver</title>
-    <meta name="description" content="">
-
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="lib/jasmine-1.2.0/jasmine.css">
-    
-    <!-- Mobile viewport optimized: h5bp.com/viewport -->
-    <meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+    <link rel="stylesheet" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style3.css">
+	<title>SIMULADOR DE GRAFOS</title>
 </head>
-<body class='index'>
-    <p id="pleasewait">Generating maze, please wait ...</p>
-    <canvas id="maze" width="600" height="600"></canvas>
+<body>
 
-    <input type="submit" value="Solve Maze" id="solve"></input>
 
-    <script src="lib/jquery.min.js"></script>
-    <script src="lib/underscore-min.js"></script>
-    <script src="src/array.js"></script>
-    <script src="src/cell.js"></script>
-    <script src="src/mazeGenerator.js"></script>
-    <script src="src/graph.js"></script>
-    <script src="src/maze.js"></script>
-    <script>
-        var maze = new Maze(document, 'maze');
-        var waitElem = $("#pleasewait");
-        
-        setTimeout(function() {
-            maze.generate();
-            maze.draw();
-            waitElem.remove();
-            $("#solve").show();
-        }, 1000);
+	<div class="div1">
+	</div>
 
-        $(function() {
-            $('#solve').click(function() {
-                maze.solve();
-            });
-        });
-    </script>
+	<div class="div2">
+		<div class="header">
+			<div 	 class="header-right">
+				<p>SIMULADOR DE GRAFOS</p>
+			</div>
+		</div>
+		&nbsp;
+		<h3>BEM VINDOS AO SIMULADOR DE GRAFOS</h3>
+		&nbsp;
+		<p>Este simulador foi desenvolvido por alunos da UEA/EST para a materia de Topicos Especiais da Computação II.</p>
+		&nbsp;
+		<p>Com esse simulador você pode:</p>
+		<br>
+		<ul>
+			<li>Criar uma topologia de grafo a partir do zero.</li>
+			<li>Salvar diversos modelos de grafos.</li>
+			<li>Utilizar uma topologia pré-determinada em nossos modelos.</li>
+			<li>Carregar um grafo feito anteriormente.</li>
+			<li>Simular até 1.000 chamadas em qualquer topologia criada.</li>
+			<li>Realizar calculos de disponibilidades de canais em redes oticas.</li>
+			<li>Medir o fluxo de comprimento de onda em redes oticas.</li>
+			<li>Determinar o coeficiente de negação de chamadas ou serviços.</li>
+			<li>Aplicar calculos de perda de pacotes</li>
+		</ul>
+		&nbsp;
+		<br>
+		<a href="tutorial.pdf" download="Documentation (ver. 2.0.1).pdf">Clique aqui para baixar nosso manual.</a>
+	</div>
+
+	<div class="div3">
+		<div class="botoes">
+			<button class="btn success" onclick=location.href="simulador.html">INICAR NOVO</button>
+			<button class="btn info" onclick= location.href="grafo_salvo.html">USAR GRAFO SALVO</button>
+			<button class="btn danger" onclick=location.href="sobre.html">SOBRE O PROJETO</button>
+		</div>
+	</div>
 </body>
 </html>
