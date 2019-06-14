@@ -28,6 +28,8 @@ var MazeGenerator = function(rows, cols) {
     var openSet = [startCell];
     var searchCell = startCell;
 
+    /// Vendo os vizinhos da celula, verificando as conexoes dos vizinhos e aplicando o algoritmo de geracao de arvore minima
+    /// junto com o de caminho minimo
     while(openSet.length > 0) {
       var neighbors = this.graph.cellDisconnectedNeighbors(searchCell);
       for(var i = 0; i < neighbors.length; i ++) {

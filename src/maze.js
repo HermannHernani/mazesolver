@@ -36,7 +36,7 @@ var Maze = function(doc, elemId) {
       self.generator.solve();
       this.drawSolution();
     },
-
+    /// Desenhando borda
     drawBorders: function() {
       this.drawLine(self.cellWidth, 0, self.width, 0);
       this.drawLine(self.width, 0, self.width, self.height);
@@ -44,6 +44,7 @@ var Maze = function(doc, elemId) {
       this.drawLine(0, self.height, 0, 0);
     },
 
+    /// Verificando os pesos
     drawSolution: function() {
       var path = self.generator.path;
       
@@ -59,6 +60,7 @@ var Maze = function(doc, elemId) {
       }
     },
 
+    /// Desenhando o labirinto
     drawMaze: function() {
       var graph = self.generator.graph;
       var drawnEdges = [];
@@ -69,6 +71,7 @@ var Maze = function(doc, elemId) {
         }) != undefined;
       };
 
+      /// For para verificacao dos subconjunto se estao conectados e se estao desenhados
       for(var i = 0; i < graph.width; i++) {
         for(var j = 0; j < graph.height; j++) {
           var cell = graph.cells[i][j];
@@ -96,7 +99,10 @@ var Maze = function(doc, elemId) {
           }
 
           if(!edgeAlreadyDrawn(cell, rightCell) && graph.areConnected(cell, rightCell)) {
-            var x1 = (cell.x * self.cellWidth) + self.cellWidth;
+            var x1 = (c<form action="maze.html" method="get" style="text-align: center">
+            Tamanho: <input type="number" name="nome">
+            <input class="btn success" type="submit" value="ENVIAR">
+          </form>ell.x * self.cellWidth) + self.cellWidth;
             var y1 = cell.y * self.cellHeight;
             var x2 = x1;
             var y2 = y1 + self.cellHeight;
